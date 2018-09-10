@@ -31,7 +31,7 @@ def main():
     arg_parser.add_argument("-t", "--title",
         help="title of the generated darktable style")
     arg_parser.add_argument("-o", "--output",
-        help="output file")
+        help="output style file")
 
     arg_parser.add_argument("file", help="input Hald CLUT")
     args = arg_parser.parse_args()

@@ -1,16 +1,18 @@
 clut2dtstyle
-===========
+============
 
-clut2dtstyle is a Python script to convert color-lookup tables in the
-form of [Hald CLUTs][1] to a [darktable][1] compatible style file.  It
-requires `darktable-chart` from darktable and ImageMagick (for `convert`
-and `identify`).
+clut2dtstyle is a Python script to convert color lookup tables (CLUTs)
+in the form of [Hald CLUTs][1] (used by RawTherapee, digiKam, etc.) to
+a [darktable][1] compatible style file.  It requires `darktable-chart`
+from darktable and ImageMagick (for `convert` and `identify`).
 
 Usage
 -----
 
-Since darktable only supports color-lookup tables with at most 49
-patches, the conversion will be approximate (but reasonable).
+Since darktable only supports CLUTs with at most 49 patches, the
+conversion will be approximate (but reasonable).  Although Hald CLUTs
+are usually distributed as PNGs, clut2dtstyle will also work with CLUTs
+in other lossless formats.
 
 ### Existing Hald CLUT
 
@@ -18,21 +20,17 @@ If you already have a Hald CLUT you want to convert to a darktable style
 file, you can use clut2dtstyle directly (with additional options):
 
 ```bash
-clut2dtstyle.py                             \
+clut2dtstyle                               \
   --number 50                              \
-  --output film_emulation_preset_1.dtstyle \
+  --output film_emulation_preset-1.dtstyle \
   --patches 40                             \
-  --title 'Film Emulation Preset I'        \
-  film_emulation_preset_1.png
+  --title 'Film Emulation Preset 1'        \
+  film_emulation_preset-1.png
 ```
 
 Note that using a large number of sampling points results in a large
 computation time.  Since darktable-chart does not support more that 49
-patches in the output color-lookup table, doing this will not result in
-better fit.
-
-Although Hald CLUTs are generally distributed as PNGs, clut2dtstyle will
-also work with CLUTs in other lossless formats.
+patches in the output CLUT, doing this will not result in a better fit.
 
 ### Cloning a filter
 
@@ -46,8 +44,8 @@ convert hald:4 hald4.png
 clut2dtstyle output.png
 ```
 
-If the program applying the filter produces only lossy output (e.g.,
-as a JPEG file), it is better to scale-up the neutral Hald CLUT before
+If the program applying the filter produces only lossy output (e.g., as
+a JPEG file), it is better to scale up the neutral Hald CLUT before
 applying the filter:
 
 ```bash
@@ -57,9 +55,9 @@ convert -scale 64x64 output.jpg output.png
 clut2dtstyle output.png
 ```
 
-Again, since the number of patches in the output color-lookup table is
-limited, it does not make much sense to go beyond a level-4 CLUT for
-cloning a filter.
+Again, since the number of patches in the output CLUT is limited, it
+does not make much sense to go beyond a level-4 CLUT for cloning
+a filter.
 
 License
 -------
