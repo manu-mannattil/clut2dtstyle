@@ -138,7 +138,7 @@ def lab_array(name, size):
 
     with open(pfm, "rb") as fd:
         # Skip the first three lines containing the header.
-        for i in range(3):
+        for _ in range(3):
             fd.readline()
         array = np.fromfile(fd, dtype=np.dtype("f4"))
 
@@ -183,16 +183,15 @@ def clut_to_dtstyle(name, output=None, number=64, patches=49, title=None):
     with open(csv, "w") as fd:
         fd.write("name; {}\n".format(title))
         fd.write("description;fitted from Hald CLUT \"{}\" using clut2dstyle\n".format(name))
-        fd.write("num_gray;0\n")
         fd.write("patch;L_source;a_source;b_source;L_reference;a_reference;b_reference\n")
         for i in range(width):
             for j in range(width):
                 fd.write("A{:02d}B{:02d};{};{};{};{};{};{}\n".format(i, j, *A[i][j], *B[i][j]))
 
-        # Fit the CLUT using darktable-chart.
-        if not output:
-            output = os.path.splitext(name)[0] + ".dtstyle"
-        subprocess.run(["darktable-chart", "--csv", csv, str(patches), output])
+    # Fit the CLUT using darktable-chart.
+    if not output:
+        output = os.path.splitext(name)[0] + ".dtstyle"
+    subprocess.run(["darktable-chart", "--csv", csv, str(patches), output])
 
     # By default, darktable-chart adds "Input color profile" and "Base curve"
     # operations to the generated dtstyle -- but we don't need them.  Thus,
