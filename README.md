@@ -3,7 +3,7 @@ clut2dtstyle
 
 clut2dtstyle is a Python script to convert color lookup tables (CLUTs)
 in the form of [Hald CLUTs][1] (used by RawTherapee, digiKam, etc.) to
-a [darktable][1] compatible style file.  It requires darktable and
+a [darktable][2] compatible style file.  It requires darktable and
 ImageMagick (for `convert` and `identify`).
 
 Usage
