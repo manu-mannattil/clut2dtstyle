@@ -3,8 +3,8 @@ clut2dtstyle
 
 clut2dtstyle is a Python script to convert color lookup tables (CLUTs)
 in the form of [Hald CLUTs][1] (used by RawTherapee, digiKam, etc.) to
-a [darktable][1] compatible style file.  It requires `darktable-chart`
-from darktable and ImageMagick (for `convert` and `identify`).
+a [darktable][1] compatible style file.  It requires darktable and
+ImageMagick (for `convert` and `identify`).
 
 Usage
 -----
@@ -20,12 +20,12 @@ If you already have a Hald CLUT you want to convert to a darktable style
 file, you can use clut2dtstyle directly (with additional options):
 
 ```bash
-clut2dtstyle                               \
-  --number 50                              \
-  --output film_emulation_preset-1.dtstyle \
-  --patches 40                             \
-  --title 'Film Emulation Preset 1'        \
-  film_emulation_preset-1.png
+clut2dtstyle                      \
+  --number 50                     \
+  --output awesome-preset.dtstyle \
+  --patches 40                    \
+  --title 'Awesome Preset'        \
+  awesome-preset.png
 ```
 
 Note that using a large number of sampling points results in a large
@@ -49,7 +49,7 @@ a JPEG file), it is better to scale up the neutral Hald CLUT before
 applying the filter:
 
 ```bash
-convert hald:4 -scale 1080x1080 hald4.png
+convert hald:4 -scale 1000x1000 hald4.png
 # apply external filter on hald4.png and save to output.jpg
 convert -scale 64x64 output.jpg output.png
 clut2dtstyle output.png
