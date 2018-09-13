@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name="clut2dtstyle",
-    license="BSD",
+    license="Unlicense",
     version="0.1",
     author="Manu Mannattil",
     author_email="manu.mannattil@gmail.com",
@@ -13,8 +13,9 @@ setup(
     py_modules=["clut2dtstyle"],
     install_requires=["numpy>=1.11.0"],
     classifiers=[
-        "License :: OSI Approved :: BSD License",
-        "Programming Language :: Python",
+        "License :: Public Domain",
+        "Programming Language :: Python :: 3",
+        "Topic :: Multimedia :: Graphics"
     ],
     entry_points="""
         [console_scripts]

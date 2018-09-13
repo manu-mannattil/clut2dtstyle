@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# clut2dtstyle is a Python 3 script to convert Hald CLUTs into darktable
+# clut2dtstyle is a Python 3 script to convert Hald CLUTs to darktable
 # style files.  It requires darktable-cli, darktable-chart, and
 # ImageMagick (for convert and identify).  For more information, run
 #
