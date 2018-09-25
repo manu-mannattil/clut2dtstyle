@@ -183,6 +183,7 @@ def clut_to_dtstyle(name, output=None, number=64, patches=49, title=None):
     with open(csv, "w") as fd:
         fd.write("name;{}\n".format(title))
         fd.write("description;fitted from Hald CLUT \"{}\" using clut2dstyle\n".format(name))
+        fd.write("num_gray;0\n")
         fd.write("patch;L_source;a_source;b_source;L_reference;a_reference;b_reference\n")
         for i in range(width):
             for j in range(width):
