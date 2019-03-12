@@ -20,12 +20,12 @@ If you already have a Hald CLUT you want to convert to a darktable style
 file, you can use clut2dtstyle directly (with additional options):
 
 ```bash
-clut2dtstyle                      \
-  --number 50                     \
-  --output awesome-preset.dtstyle \
-  --patches 40                    \
-  --title 'Awesome Preset'        \
-  awesome-preset.png
+clut2dtstyle              \
+  --number 50             \
+  --output preset.dtstyle \
+  --patches 40            \
+  --title 'Preset Name'   \
+  preset.png
 ```
 
 Note that using a large number of sampling points results in a large
@@ -58,6 +58,11 @@ clut2dtstyle output.png
 Again, since the number of patches in the output CLUT is limited, it
 does not make much sense to go beyond a level-4 CLUT for cloning
 a filter.
+
+Example
+-------
+
+![](https://i.imgur.com/59fWROK.png)
 
 License
 -------
