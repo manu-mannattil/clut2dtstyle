@@ -1,3 +1,7 @@
+**This script is obsolete as darktable now (since [version 3.0.0][3])
+has a module for 3D RGB LUT transformations that natively supports Hald
+CLUTs and Cube files.**
+
 clut2dtstyle
 ============
 
@@ -71,3 +75,4 @@ Public domain.  See the file UNLICENSE for more details.
 
 [1]: http://www.quelsolaar.com/technology/clut.html
 [2]: https://www.darktable.org/
+[3]: https://www.darktable.org/2019/12/darktable-300-released/
